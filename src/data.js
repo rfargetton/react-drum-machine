@@ -1,3 +1,4 @@
+// Sound banks data
 
 export const padBanks = {
     "heater": [
