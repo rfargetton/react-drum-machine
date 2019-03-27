@@ -5,23 +5,23 @@ import { padBanks } from './data';
 import Select from 'react-select';
 
 // Project Title
-const projectTitle = "Drum Machine"
+const projectTitle = "Drum Machine";
 
 // Options array used by React-Select to switch between sound banks
 const options = [
   { value : 'heater', label: 'Heater', bank: padBanks['heater']},
   { value : 'chord', label: 'Chord', bank: padBanks['chord']}
-]
+];
 
 // Main App Component
 export default class App extends Component {
   constructor(props){
-    super(props)
+    super(props);
     this.state = {
       padBank : padBanks["heater"] ,
       display : " ",
       volume : 50
-    }
+    };
     this.updateDisplay = this.updateDisplay.bind(this);
     this.updateVolume = this.updateVolume.bind(this);
     this.changeBank = this.changeBank.bind(this);
@@ -32,11 +32,11 @@ export default class App extends Component {
   }
   
   updateVolume(e){
-    this.setState({ volume : e.target.value })
+    this.setState({ volume : e.target.value });
   }
   
   changeBank(val){
-    this.setState({ padBank : val.bank })
+    this.setState({ padBank : val.bank });
   }
   
   render(){
@@ -58,7 +58,7 @@ export default class App extends Component {
           Designed and Built by Romaric Fargetton using <a href="https://reactjs.org/">React</a> and <a href="https://draculatheme.com/">Dracula</a>
         </footer>
       </div>
-    )
+    );
   }
 }
 
@@ -74,13 +74,13 @@ const Pads = ({padBank, updateDisplay, volume}) => {
           keyValue={pad.key} 
           volume={volume}
           />
-  )
+  );
 
   return (
     <div id="drum-pads">{padList}</div>
-  )
+  );
 
-}
+};
 
 // A stateless functional component that returns the display, volume and soundbank controls
 const Settings = ({display, volume, updateVolume, changeBank}) => {
@@ -113,6 +113,6 @@ const Settings = ({display, volume, updateVolume, changeBank}) => {
       </div>
 
     </div>
-  )
-}
+  );
+};
 
