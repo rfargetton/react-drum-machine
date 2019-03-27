@@ -1,0 +1,123 @@
+// Dracula Theme Color Scheme --> https://github.com/dracula/dracula-theme/
+
+$background-color: #282a36
+$current-line: #44475a
+$foreground: #f8f8f2
+$comment: #6272a4
+$purple: #bd93f9
+$cyan: #8be9fd
+$yellow: #f1fa8c
+$red: #ff5555
+
+body 
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif
+  letter-spacing: 0.07em
+  font-weight: 200
+  background-color: lightgray
+  margin: 0
+  
+#root 
+  height: 100vh
+  display: grid
+  place-items: center
+  padding: 20px
+  
+.container
+  max-width: 600px;
+  background-color: $background-color
+  color: $foreground
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  grid-template-areas: "title title title" "settings settings settings" "drumPads drumPads drumPads"
+  border-radius: 20px
+  box-shadow: 5px 15px 40px rgba(0,0,0,0.5)
+  overflow: hidden
+  @media screen and (max-width: 400px)
+    grid-template-areas: "title title title" "display display display" "drumPads drumPads drumPads"
+
+  
+#title
+  color: $purple
+  grid-area : title 
+  padding: 30px
+  margin : 0
+  display: grid
+  place-items: start
+  font-size: 30px
+  font-weight: 500
+  
+#settings 
+  grid-area : settings 
+  padding: 15px 
+  line-height: 30px
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  align-items: start
+  .setting
+    padding: 15px
+    header 
+      color: $comment
+      font-size: 14px
+      margin-bottom: 4px
+  #current
+    color: $yellow
+    font-size: 24px
+    line-height: 30px
+    height: 30px
+  #volume-range
+    height: 20px
+    width: 100%
+    padding: 0
+    border-radius: 5px
+  #library
+    position: relative
+    select
+      width: 100%
+      background-color: black
+      border: 0px
+      color: $yellow
+      border-radius: 5px
+
+.react-select-container
+  .react-select__control
+    background-color: $current-line
+    border: 0px 
+  .react-select__single-value
+    color: $yellow
+  .react-select__menu
+    background-color: $current-line
+    padding: 0px
+    .react-select__option
+      font-size: 14px
+    .react-select__option--is-selected
+      background-color: $purple
+      color: $yellow
+    .react-select__option:hover,
+    .react-select__option--is-focused
+      background-color: $background-color
+
+#drum-pads 
+  grid-area: drumPads
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  grid-template-rows: repeat(3, 150px)
+  place-items: stretch
+  grid-column-gap: 1px
+  grid-row-gap: 1px
+  
+.drum-pad 
+  color: $cyan
+  font-size: 24px
+  display: grid
+  place-items: center
+footer
+  font-size: 14px
+  max-width: 600px
+  box-sizing: border-box
+  padding: 40px  
+  text-align: center
+  color: $background-color
+  a 
+    color: $purple
+    text-decoration: none5
+    
