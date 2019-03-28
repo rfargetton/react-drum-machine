@@ -2,14 +2,14 @@ import React, { Component } from 'react' ;
 
 // CSS Styles for active Pad
 const activePad = {
-    backgroundColor: '#6272a4',
-    color: '#f1fa8c'
+  backgroundColor: '#6272a4',
+  color: '#f1fa8c'
 };
   
 // CSS Style for inactive Pad
 const inactivePad = {
-    backgroundColor: '#44475a',
-    color: '#8be9fd'
+  backgroundColor: '#44475a',
+  color: '#8be9fd'
 };
 
 //  Pad Component
@@ -24,13 +24,13 @@ export default class Pad extends Component {
     this.handleKeyDown =  this.handleKeyDown.bind(this);
   }
   
-  // Initializing listener for 'keydown' event after the component has been rendered
   componentDidMount(){
+    // Initializing listener for 'keydown' event after the component has been rendered
     document.addEventListener("keydown", this.handleKeyDown, false);
   }
 
-  // Tearing down the listener 
   componentWillUnmount(){
+    // Tearing down the listener 
     document.removeEventListener("keydown", this.handleKeyDown, false)
   }
   
@@ -54,7 +54,7 @@ export default class Pad extends Component {
     this.setState({ padStyle: activePad });
     setTimeout(() => (
       this.setState({
-          padStyle: inactivePad 
+        padStyle: inactivePad 
       })
     ), 200);
   }
@@ -64,10 +64,9 @@ export default class Pad extends Component {
       <div  className="drum-pad" 
             style={this.state.padStyle} 
             id={this.props.name} 
-            onClick={this.playClip}
-            >
-          {this.props.id}
-          <audio className="clip" id={this.props.id} src={this.props.src}></audio>
+            onClick={this.playClip} >
+        {this.props.id}
+        <audio className="clip" id={this.props.id} src={this.props.src}></audio>
       </div>
     );    
   }
