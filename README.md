@@ -1,6 +1,6 @@
 # React Drum Machine
 
-A simple drum machine built using React, Create-React-App and Dracula color scheme.
+A simple drum machine built using React, create-react-app and Dracula color scheme.
 
 ![Drum Machine Screenshot](assets/img/drum-machine-screenshot1.png)
 
