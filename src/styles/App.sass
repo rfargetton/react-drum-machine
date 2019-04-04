@@ -32,19 +32,19 @@ body
   border-radius: 20px
   box-shadow: 5px 15px 40px rgba(0,0,0,0.5)
   overflow: hidden
-  @media screen and (max-width: 400px)
-    grid-template-areas: "title title title" "display display display" "drumPads drumPads drumPads"
-
   
 #title
   color: $purple
   grid-area : title 
   padding: 30px
+  border-bottom: 1px $current-line solid
   margin : 0
   display: grid
   place-items: start
   font-size: 30px
   font-weight: 500
+  @media screen and (max-width: 400px)
+    font-size : 24px
   
 #settings 
   grid-area : settings 
@@ -52,6 +52,7 @@ body
   line-height: 30px
   display: grid
   grid-template-columns: repeat(3, 1fr)
+  grid-template-areas: "display volume bank"
   align-items: start
   .setting
     padding: 15px
@@ -59,17 +60,23 @@ body
       color: $comment
       font-size: 14px
       margin-bottom: 4px
-  #current
-    color: $yellow
-    font-size: 24px
-    line-height: 30px
-    height: 30px
-  #volume-range
-    height: 20px
-    width: 100%
-    padding: 0
-    border-radius: 5px
+  #display
+    grid-area: display
+    #current
+      color: $yellow
+      font-size: 24px
+      line-height: 30px
+      height: 30px
+  #volume
+    grid-area: volume
+    #volume-range
+      height: 20px
+      width: 100%
+      padding: 0
+      border-radius: 5px
+
   #library
+    grid-area: bank
     position: relative
     select
       width: 100%
@@ -77,6 +84,11 @@ body
       border: 0px
       color: $yellow
       border-radius: 5px
+  @media screen and (max-width: 400px)
+    grid-template-columns: repeat(2, 1fr)
+    grid-template-areas: "display display" "volume bank" 
+    #display #current
+      font-size : 18px
 
 .react-select-container
   .react-select__control
@@ -104,12 +116,16 @@ body
   place-items: stretch
   grid-column-gap: 1px
   grid-row-gap: 1px
+  @media screen and (max-width: 400px)
+    grid-template-rows: repeat(3, 100px)
+ 
   
 .drum-pad 
   color: $cyan
   font-size: 24px
   display: grid
   place-items: center
+
 footer
   font-size: 14px
   max-width: 600px
