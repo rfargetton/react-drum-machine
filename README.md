@@ -1,6 +1,6 @@
 # React Drum Machine
 
-A simple drum machine built using React, create-react-app and Dracula color scheme. See a live demo [here](https://drum.romaricfargetton.com/).
+A drum machine built with React, featuring the [Dracula color scheme](https://github.com/dracula/dracula-theme) and bootstraped with [Create React App](https://github.com/facebook/create-react-app). See a live demo [here](https://drum.romaricfargetton.com)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2c9201bb-d2cb-4217-a64a-87b13ed26d36/deploy-status)](https://app.netlify.com/sites/reverent-mccarthy-b645e6/deploys)
 
@@ -9,7 +9,7 @@ A simple drum machine built using React, create-react-app and Dracula color sche
 ## Features
 
 - **Keyboard support**
-- **Visual feedback**, thanks to sound display and pad activation
+- **Visual feedback**, with sound display and pad activation
 - **Volume control**
 - Possibility to switch between **multiple sound banks**
 
